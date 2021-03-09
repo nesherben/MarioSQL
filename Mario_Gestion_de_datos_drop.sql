@@ -1,39 +1,28 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2021-03-08 20:28:00.651
+-- Last modification date: 2021-03-09 17:36:20.857
 
 -- foreign keys
-ALTER TABLE Bloque
-    DROP FOREIGN KEY Bloque_Salas;
+-- ALTER TABLE DROP CONSTRAINT not supported
 
-ALTER TABLE Challenge
-    DROP FOREIGN KEY Challenge_Jugador;
+-- ALTER TABLE DROP CONSTRAINT not supported
 
-ALTER TABLE Clasico
-    DROP FOREIGN KEY Clasico_Habilidad;
+-- ALTER TABLE DROP CONSTRAINT not supported
 
-ALTER TABLE Clasico
-    DROP FOREIGN KEY Clasico_Jugador;
+-- ALTER TABLE DROP CONSTRAINT not supported
 
-ALTER TABLE Enemigo
-    DROP FOREIGN KEY Enemigo_Habilidad;
+-- ALTER TABLE DROP CONSTRAINT not supported
 
-ALTER TABLE Enemigo
-    DROP FOREIGN KEY Enemigo_Salas;
+-- ALTER TABLE DROP CONSTRAINT not supported
 
-ALTER TABLE Fortuna
-    DROP FOREIGN KEY Fortuna_Jugador;
+-- ALTER TABLE DROP CONSTRAINT not supported
 
-ALTER TABLE Mundo
-    DROP FOREIGN KEY Mundo_Clasico;
+-- ALTER TABLE DROP CONSTRAINT not supported
 
-ALTER TABLE Niveles
-    DROP FOREIGN KEY Niveles_Mundo;
+-- ALTER TABLE DROP CONSTRAINT not supported
 
-ALTER TABLE Salas
-    DROP FOREIGN KEY Salas_Niveles;
+-- ALTER TABLE DROP CONSTRAINT not supported
 
-ALTER TABLE Versus
-    DROP FOREIGN KEY Versus_Jugador;
+-- ALTER TABLE DROP CONSTRAINT not supported
 
 -- tables
 DROP TABLE Bloque;
