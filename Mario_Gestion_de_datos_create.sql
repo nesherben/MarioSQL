@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2021-03-09 17:36:20.857
+-- Last modification date: 2021-03-11 17:20:50.849
 
 -- tables
 -- Table: Bloque
@@ -18,12 +18,13 @@ CREATE TABLE Bloque (
 -- Table: Challenge
 CREATE TABLE Challenge (
     Player_ID int NOT NULL,
-    Nivel int NOT NULL CONSTRAINT Challenge_pk PRIMARY KEY,
+    Nivel int NOT NULL,
     Completado boolean NOT NULL,
     Puntuacion int NOT NULL,
     Medallas boolean NOT NULL,
     Huevo boolean NOT NULL,
     Record boolean NOT NULL,
+    CONSTRAINT Player_nivel PRIMARY KEY (Nivel,Player_ID),
     CONSTRAINT Challenge_Jugador FOREIGN KEY (Player_ID)
     REFERENCES Jugador (Player_ID)
     ON DELETE RESTRICT 
@@ -70,8 +71,9 @@ CREATE TABLE Enemigo (
 -- Table: Fortuna
 CREATE TABLE Fortuna (
     Player_ID int NOT NULL,
-    Fecha date NOT NULL CONSTRAINT Fortuna_pk PRIMARY KEY,
+    Fecha date NOT NULL,
     Fortuna varchar(20) NOT NULL,
+    CONSTRAINT Player_Fecha PRIMARY KEY (Fecha,Player_ID),
     CONSTRAINT Fortuna_Jugador FOREIGN KEY (Player_ID)
     REFERENCES Jugador (Player_ID)
     ON DELETE RESTRICT 
@@ -88,6 +90,8 @@ CREATE TABLE Habilidad (
 CREATE TABLE Jugador (
     Player_ID int NOT NULL CONSTRAINT ID Jugador PRIMARY KEY,
     Nombre varchar(10) NOT NULL,
+    Racha_V int NOT NULL DEFAULT 0,
+    Racha_D integer NOT NULL DEFAULT 0,
     CONSTRAINT Nombre UNIQUE (Nombre)
 );
 
@@ -128,10 +132,9 @@ CREATE TABLE Salas (
 -- Table: Versus
 CREATE TABLE Versus (
     Player_ID int NOT NULL,
-    Nivel int NOT NULL CONSTRAINT Versus_pk PRIMARY KEY,
+    Nivel int NOT NULL,
     Dificultad int NOT NULL,
-    Racha_V int NOT NULL,
-    Racha_D integer NOT NULL,
+    CONSTRAINT Player_nivel PRIMARY KEY (Nivel,Player_ID),
     CONSTRAINT Versus_Jugador FOREIGN KEY (Player_ID)
     REFERENCES Jugador (Player_ID)
     ON DELETE RESTRICT 
