@@ -1,7 +1,9 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2021-03-11 17:32:49.255
+-- Last modification date: 2021-03-11 18:33:20.216
 
 -- foreign keys
+-- ALTER TABLE DROP CONSTRAINT not supported
+
 -- ALTER TABLE DROP CONSTRAINT not supported
 
 -- ALTER TABLE DROP CONSTRAINT not supported
@@ -38,8 +40,6 @@ DROP TABLE Fortuna;
 DROP TABLE Habilidad;
 
 DROP TABLE Jugador;
-
-DROP TABLE Mundo;
 
 DROP TABLE Niveles;
 
