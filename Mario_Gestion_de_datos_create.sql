@@ -1,11 +1,11 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2021-03-11 19:03:37.286
+-- Last modification date: 2021-03-11 19:19:15.058
 
 -- tables
 -- Table: Bloque
 CREATE TABLE Bloque (
-    Sala int NOT NULL,
-    Coord_B int NOT NULL,
+    Sala varchar(20) NOT NULL,
+    Coord_B varchar(10) NOT NULL,
     Tipo varchar(10) NOT NULL,
     Contenido varchar(10) DEFAULT Nada,
     CONSTRAINT Bloque_pk PRIMARY KEY (Coord_B,Sala),
