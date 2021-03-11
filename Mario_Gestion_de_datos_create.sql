@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2021-03-11 18:33:20.216
+-- Last modification date: 2021-03-11 18:53:01.509
 
 -- tables
 -- Table: Bloque
@@ -9,8 +9,8 @@ CREATE TABLE Bloque (
     Tipo varchar(10) NOT NULL,
     Contenido varchar(10) DEFAULT Nada,
     CONSTRAINT Bloque_pk PRIMARY KEY (Coord_B,Sala),
-    CONSTRAINT Bloque_Salas FOREIGN KEY (Sala)
-    REFERENCES Salas (Tipo)
+    CONSTRAINT Bloque_Salas FOREIGN KEY (Sala,Sala)
+    REFERENCES Salas (Tipo,Nivel)
     ON DELETE RESTRICT 
     ON UPDATE CASCADE
 );
@@ -57,13 +57,13 @@ CREATE TABLE Enemigo (
     Nombre varchar(15) NOT NULL,
     Salas_Nivel varchar(10) NOT NULL,
     Habilidad_ID int,
-    CONSTRAINT Enemigo_Salas FOREIGN KEY (Salas_Nivel)
-    REFERENCES Salas (Tipo)
-    ON DELETE RESTRICT 
-    ON UPDATE CASCADE,
     CONSTRAINT Enemigo_Habilidad FOREIGN KEY (Habilidad_ID)
     REFERENCES Habilidad (Habilidad_ID)
     ON DELETE SET DEFAULT 
+    ON UPDATE CASCADE,
+    CONSTRAINT Enemigo_Salas FOREIGN KEY (Salas_Nivel,Salas_Nivel)
+    REFERENCES Salas (Tipo,Nivel)
+    ON DELETE RESTRICT 
     ON UPDATE CASCADE
 );
 
@@ -98,7 +98,7 @@ CREATE TABLE Jugador (
 CREATE TABLE Niveles (
     Nivel varchar(5) NOT NULL CONSTRAINT Niveles_pk PRIMARY KEY,
     Mundo varchar(20) NOT NULL,
-    Salas int NOT NULL,
+    Salas varchar(20) NOT NULL,
     Check_flag boolean NOT NULL,
     Tiempo int NOT NULL,
     CONSTRAINT Clasico_Niveles FOREIGN KEY (Nivel)
@@ -115,8 +115,10 @@ CREATE TABLE Niveles (
 
 -- Table: Salas
 CREATE TABLE Salas (
-    Tipo varchar(10) NOT NULL CONSTRAINT Salas_pk PRIMARY KEY,
+    Tipo varchar(10) NOT NULL,
     Nivel varchar(5) NOT NULL,
+    CONSTRAINT Salas_pk PRIMARY KEY (Tipo,Nivel),
+    CONSTRAINT Nivel UNIQUE (Nivel),
     CONSTRAINT Salas_Niveles FOREIGN KEY (Nivel)
     REFERENCES Niveles (Nivel)
     ON DELETE RESTRICT 
