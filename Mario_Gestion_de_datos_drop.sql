@@ -1,9 +1,7 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2021-03-11 19:19:15.058
+-- Last modification date: 2021-03-11 21:21:52.296
 
 -- foreign keys
--- ALTER TABLE DROP CONSTRAINT not supported
-
 -- ALTER TABLE DROP CONSTRAINT not supported
 
 -- ALTER TABLE DROP CONSTRAINT not supported
@@ -42,8 +40,6 @@ DROP TABLE Habilidad;
 DROP TABLE Jugador;
 
 DROP TABLE Niveles;
-
-DROP TABLE Salas;
 
 DROP TABLE Versus;
 
