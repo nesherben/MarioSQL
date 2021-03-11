@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2021-03-11 18:53:01.509
+-- Last modification date: 2021-03-11 19:03:37.286
 
 -- tables
 -- Table: Bloque
@@ -71,7 +71,7 @@ CREATE TABLE Enemigo (
 CREATE TABLE Fortuna (
     Player_ID int NOT NULL,
     Fecha date NOT NULL,
-    Fortuna varchar(20) NOT NULL,
+    Fortuna varchar(20),
     CONSTRAINT Player_Fecha PRIMARY KEY (Fecha,Player_ID),
     CONSTRAINT Fortuna_Jugador FOREIGN KEY (Player_ID)
     REFERENCES Jugador (Player_ID)
@@ -118,7 +118,6 @@ CREATE TABLE Salas (
     Tipo varchar(10) NOT NULL,
     Nivel varchar(5) NOT NULL,
     CONSTRAINT Salas_pk PRIMARY KEY (Tipo,Nivel),
-    CONSTRAINT Nivel UNIQUE (Nivel),
     CONSTRAINT Salas_Niveles FOREIGN KEY (Nivel)
     REFERENCES Niveles (Nivel)
     ON DELETE RESTRICT 
