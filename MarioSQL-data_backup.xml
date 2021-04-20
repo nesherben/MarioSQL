@@ -1,0 +1,1703 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DatabaseModel VersionId="2.3">
+    <Name></Name>
+    <Description>Base de datos de un videojuego de Super Mario para la asignatura de Gestión de datos.</Description>
+    <DatabaseEngine>
+        <Name>sqlite</Name>
+        <Version>3.x</Version>
+    </DatabaseEngine>
+    <Counters>
+        <Counter>
+            <Name>table</Name>
+            <Value>38</Value>
+            <Prefix>t</Prefix>
+        </Counter>
+        <Counter>
+            <Name>column</Name>
+            <Value>206</Value>
+            <Prefix>c</Prefix>
+        </Counter>
+        <Counter>
+            <Name>index</Name>
+            <Value>0</Value>
+            <Prefix>i</Prefix>
+        </Counter>
+        <Counter>
+            <Name>reference</Name>
+            <Value>69</Value>
+            <Prefix>r</Prefix>
+        </Counter>
+        <Counter>
+            <Name>table_check</Name>
+            <Value>0</Value>
+            <Prefix>tc</Prefix>
+        </Counter>
+        <Counter>
+            <Name>alternate_key</Name>
+            <Value>18</Value>
+            <Prefix>a</Prefix>
+        </Counter>
+        <Counter>
+            <Name>sequence</Name>
+            <Value>0</Value>
+            <Prefix>s</Prefix>
+        </Counter>
+        <Counter>
+            <Name>note</Name>
+            <Value>1</Value>
+            <Prefix>n</Prefix>
+        </Counter>
+        <Counter>
+            <Name>view</Name>
+            <Value>0</Value>
+            <Prefix>v</Prefix>
+        </Counter>
+        <Counter>
+            <Name>view_column</Name>
+            <Value>0</Value>
+            <Prefix>vc</Prefix>
+        </Counter>
+        <Counter>
+            <Name>area</Name>
+            <Value>12</Value>
+            <Prefix>ar</Prefix>
+        </Counter>
+        <Counter>
+            <Name>text</Name>
+            <Value>0</Value>
+            <Prefix>tx</Prefix>
+        </Counter>
+        <Counter>
+            <Name>tableDisplay</Name>
+            <Value>39</Value>
+            <Prefix>td</Prefix>
+        </Counter>
+        <Counter>
+            <Name>viewDisplay</Name>
+            <Value>0</Value>
+            <Prefix>vd</Prefix>
+        </Counter>
+        <Counter>
+            <Name>referenceDisplay</Name>
+            <Value>69</Value>
+            <Prefix>rd</Prefix>
+        </Counter>
+    </Counters>
+    <AdditionalSQLBeforeCreate></AdditionalSQLBeforeCreate>
+    <AdditionalSQLAfterCreate></AdditionalSQLAfterCreate>
+    <AdditionalSQLBeforeDrop></AdditionalSQLBeforeDrop>
+    <AdditionalSQLAfterDrop></AdditionalSQLAfterDrop>
+    <Tables>
+        <Table Id="t21">
+            <Name>Jugador</Name>
+            <Description>El usuario que ha accedido al juego</Description>
+            <Columns>
+                <Column Id="c69">
+                    <Name>Player_ID</Name>
+                    <Type>int</Type>
+                    <Description>ID del jugador que va a jugar</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c71">
+                    <Name>Nombre</Name>
+                    <Type>varchar(10)</Type>
+                    <Description>Nombre de usuario del jugador</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c147">
+                    <Name>Racha_V</Name>
+                    <Type>int</Type>
+                    <Description>Racha de victorias
+contra la IA</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue>0</DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c148">
+                    <Name>Racha_D</Name>
+                    <Type>int</Type>
+                    <Description>Racha de derrotas
+contra la IA</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue>0</DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name>Player_ID</Name>
+                <Columns>
+                    <Column>c69</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys>
+                <AlternateKey Id="a12">
+                    <Name>Nombre</Name>
+                    <Description>Usuario de la partida</Description>
+                    <Columns>
+                        <Column>c71</Column>
+                    </Columns>
+                    <Properties/>
+                </AlternateKey>
+            </AlternateKeys>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore></AdditionalSQLBefore>
+            <AdditionalSQLAfter></AdditionalSQLAfter>
+            <Properties/>
+        </Table>
+        <Table Id="t23">
+            <Name>Enemigo</Name>
+            <Description>los enemigos del juego</Description>
+            <Columns>
+                <Column Id="c81">
+                    <Name>Enemy_ID</Name>
+                    <Type>int</Type>
+                    <Description>id del enemigo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c82">
+                    <Name>Nombre</Name>
+                    <Type>varchar(15)</Type>
+                    <Description>nombre del enemigo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c83">
+                    <Name>Habilidad_ID</Name>
+                    <Type>int</Type>
+                    <Description>habilidad que tiene el enemigo</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name></Name>
+                <Columns>
+                    <Column>c81</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore></AdditionalSQLBefore>
+            <AdditionalSQLAfter></AdditionalSQLAfter>
+            <Properties/>
+        </Table>
+        <Table Id="t25">
+            <Name>Fortuna</Name>
+            <Description>Rueda de la fortuna diaria</Description>
+            <Columns>
+                <Column Id="c97">
+                    <Name>Player_ID</Name>
+                    <Type>int</Type>
+                    <Description>ID del jugador que va a jugar</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c98">
+                    <Name>Fecha</Name>
+                    <Type>date</Type>
+                    <Description>Fecha del día cuando se hace la lectura de fortuna</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c99">
+                    <Name>Fortuna</Name>
+                    <Type>varchar(20)</Type>
+                    <Description>LA fortuna del jugador para ese día</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name>Player_Fecha</Name>
+                <Columns>
+                    <Column>c98</Column>
+                    <Column>c97</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore></AdditionalSQLBefore>
+            <AdditionalSQLAfter></AdditionalSQLAfter>
+            <Properties/>
+        </Table>
+        <Table Id="t26">
+            <Name>Habilidad</Name>
+            <Description>habilidades disponibles en el juego</Description>
+            <Columns>
+                <Column Id="c84">
+                    <Name>Habilidad_ID</Name>
+                    <Type>int</Type>
+                    <Description>id de la habilidad</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c85">
+                    <Name>Nombre</Name>
+                    <Type>varchar(20)</Type>
+                    <Description>nombre de la habilidad</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name></Name>
+                <Columns>
+                    <Column>c84</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore></AdditionalSQLBefore>
+            <AdditionalSQLAfter></AdditionalSQLAfter>
+            <Properties/>
+        </Table>
+        <Table Id="t28">
+            <Name>Niveles</Name>
+            <Description>niveles y sus diferentes características</Description>
+            <Columns>
+                <Column Id="c153">
+                    <Name>Nivel</Name>
+                    <Type>varchar(5)</Type>
+                    <Description>El numero del nivel</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c89">
+                    <Name>Check_flag</Name>
+                    <Type>boolean</Type>
+                    <Description>se activa si hemos pasado el checkpoint para empezar desde ahi</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c139">
+                    <Name>Tiempo</Name>
+                    <Type>int</Type>
+                    <Description>tiempo del nivel</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name></Name>
+                <Columns>
+                    <Column>c153</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore></AdditionalSQLBefore>
+            <AdditionalSQLAfter></AdditionalSQLAfter>
+            <Properties/>
+        </Table>
+        <Table Id="t29">
+            <Name>Clasico</Name>
+            <Description>Slots de guardado</Description>
+            <Columns>
+                <Column Id="c75">
+                    <Name>Jugador_ID</Name>
+                    <Type>int</Type>
+                    <Description>ID del jugador que va a jugar</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c194">
+                    <Name>Nivel</Name>
+                    <Type>varchar(5)</Type>
+                    <Description>Nivel de la partida en el que se encuentra el jugador</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue>New</DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c76">
+                    <Name>Personaje</Name>
+                    <Type>varchar(10)</Type>
+                    <Description>Personaje que se usa al jugar (Mario o Luigi...)</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c111">
+                    <Name>Vidas</Name>
+                    <Type>int</Type>
+                    <Description>Vidas restantes</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c112">
+                    <Name>Monedas</Name>
+                    <Type>int</Type>
+                    <Description>Monedas obtenidas en toda la partida</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c144">
+                    <Name>Puntuacion</Name>
+                    <Type>int</Type>
+                    <Description>Puntuacion total obtenia en todos los niveles en una misma partida (antes de perder todas las vidas)</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c119">
+                    <Name>PowerUp</Name>
+                    <Type>int</Type>
+                    <Description>Power Up que tiene el personaje en este momento</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name>Jugador</Name>
+                <Columns>
+                    <Column>c75</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore></AdditionalSQLBefore>
+            <AdditionalSQLAfter></AdditionalSQLAfter>
+            <Properties/>
+        </Table>
+        <Table Id="t31">
+            <Name>Challenge</Name>
+            <Description>Modo challenge</Description>
+            <Columns>
+                <Column Id="c90">
+                    <Name>Player_ID</Name>
+                    <Type>int</Type>
+                    <Description>ID del jugador que va a jugar</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c196">
+                    <Name>Nivel</Name>
+                    <Type>varchar(5)</Type>
+                    <Description>Nivel en el que ha jugado el jugador</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c92">
+                    <Name>Completado</Name>
+                    <Type>boolean</Type>
+                    <Description>booleano si el nivel se ha completado</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c93">
+                    <Name>Puntuacion</Name>
+                    <Type>int</Type>
+                    <Description>mayor puntuación obtenida en el nivel</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c94">
+                    <Name>Medallas</Name>
+                    <Type>boolean</Type>
+                    <Description>Símbolo si se han obtenido las medallas coleccionables</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c95">
+                    <Name>Huevo</Name>
+                    <Type>boolean</Type>
+                    <Description>Símbolo si se ha obtenido el huevo de Yoshi oculto</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c96">
+                    <Name>Record</Name>
+                    <Type>boolean</Type>
+                    <Description>Símbolo si se ha obtenido el record objetivo de puntos</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name>Player_nivel</Name>
+                <Columns>
+                    <Column>c90</Column>
+                    <Column>c196</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore></AdditionalSQLBefore>
+            <AdditionalSQLAfter></AdditionalSQLAfter>
+            <Properties/>
+        </Table>
+        <Table Id="t32">
+            <Name>Versus</Name>
+            <Description>modo contra la IA</Description>
+            <Columns>
+                <Column Id="c104">
+                    <Name>Player_ID</Name>
+                    <Type>int</Type>
+                    <Description>ID del jugador que va a jugar</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c195">
+                    <Name>Nivel</Name>
+                    <Type>varchar(5)</Type>
+                    <Description>Nivel en el que ha jugado el jugador</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c106">
+                    <Name>Dificultad</Name>
+                    <Type>int</Type>
+                    <Description>La dificultad de la IA</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name>Player_nivel</Name>
+                <Columns>
+                    <Column>c104</Column>
+                    <Column>c195</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore></AdditionalSQLBefore>
+            <AdditionalSQLAfter></AdditionalSQLAfter>
+            <Properties/>
+        </Table>
+        <Table Id="t33">
+            <Name>Bloque</Name>
+            <Description>bloques del juego</Description>
+            <Columns>
+                <Column Id="c117">
+                    <Name>Coord_B</Name>
+                    <Type>varchar(10)</Type>
+                    <Description>Identificador del bloque, sabiendo sus coordenadas en la malla sabremos que bloque es</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c116">
+                    <Name>Tipo</Name>
+                    <Type>varchar(10)</Type>
+                    <Description>bloque normal, invisible, bloque "?"...</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c118">
+                    <Name>Contenido</Name>
+                    <Type>varchar(10)</Type>
+                    <Description>contenido que tiene el bloque: nada, moneda, power up, etc...</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue>"NO"</DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c170">
+                    <Name>Cantidad</Name>
+                    <Type>integer</Type>
+                    <Description>Numero de X elementos en el bloque</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue>0</DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name></Name>
+                <Columns>
+                    <Column>c117</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore></AdditionalSQLBefore>
+            <AdditionalSQLAfter></AdditionalSQLAfter>
+            <Properties/>
+        </Table>
+        <Table Id="t35">
+            <Name>Enemy_Level</Name>
+            <Description>Tabla que relaciona enemigos con niveles
+</Description>
+            <Columns>
+                <Column Id="c166">
+                    <Name>Niveles_Nivel</Name>
+                    <Type>varchar(5)</Type>
+                    <Description></Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c167">
+                    <Name>Enemigo_Enemy_ID</Name>
+                    <Type>int</Type>
+                    <Description></Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c172">
+                    <Name>Cantidad</Name>
+                    <Type>integer</Type>
+                    <Description>Cantidad de un mismo enemigo en el nivel</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue>0</DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name></Name>
+                <Columns>
+                    <Column>c166</Column>
+                    <Column>c167</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore></AdditionalSQLBefore>
+            <AdditionalSQLAfter></AdditionalSQLAfter>
+            <Properties/>
+        </Table>
+        <Table Id="t36">
+            <Name>Blocks_Level</Name>
+            <Description>bloques que contienen los niveles</Description>
+            <Columns>
+                <Column Id="c168">
+                    <Name>Niveles_Nivel</Name>
+                    <Type>varchar(5)</Type>
+                    <Description></Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c169">
+                    <Name>Bloque_Coord_B</Name>
+                    <Type>varchar(10)</Type>
+                    <Description></Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c171">
+                    <Name>Cantidad</Name>
+                    <Type>integer</Type>
+                    <Description>Cantidad de bloques de un mismo tipo en un nivel determinado</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue>0</DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name></Name>
+                <Columns>
+                    <Column>c168</Column>
+                    <Column>c169</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore></AdditionalSQLBefore>
+            <AdditionalSQLAfter></AdditionalSQLAfter>
+            <Properties/>
+        </Table>
+        <Table Id="t38">
+            <Name>Elemento</Name>
+            <Description>Elemento que contiene un bloque</Description>
+            <Columns>
+                <Column Id="c202">
+                    <Name>Element_ID</Name>
+                    <Type>integer</Type>
+                    <Description>ID del elemento del bloque</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c203">
+                    <Name>Nombre</Name>
+                    <Type>varchar(20)</Type>
+                    <Description>nombre del elemento</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c205">
+                    <Name>Power</Name>
+                    <Type>integer</Type>
+                    <Description>Si es un power-up, será su ID, si no, será nulo</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue>NULL</DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name></Name>
+                <Columns>
+                    <Column>c202</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore></AdditionalSQLBefore>
+            <AdditionalSQLAfter></AdditionalSQLAfter>
+            <Properties/>
+        </Table>
+    </Tables>
+    <Views/>
+    <References>
+        <Reference Id="r22">
+            <Name>Clasico_Jugador</Name>
+            <Description></Description>
+            <PKTable>t21</PKTable>
+            <FKTable>t29</FKTable>
+            <PKRole></PKRole>
+            <FKRole></FKRole>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c69</PKColumn>
+                    <FKColumn>c75</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>1..1</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>Cascade</OnUpdateAction>
+            <OnDeleteAction>Restrict</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r23">
+            <Name>Fortuna_Jugador</Name>
+            <Description></Description>
+            <PKTable>t21</PKTable>
+            <FKTable>t25</FKTable>
+            <PKRole></PKRole>
+            <FKRole></FKRole>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c69</PKColumn>
+                    <FKColumn>c97</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>1..1</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>Cascade</OnUpdateAction>
+            <OnDeleteAction>Restrict</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r24">
+            <Name>Challenge_Jugador</Name>
+            <Description></Description>
+            <PKTable>t21</PKTable>
+            <FKTable>t31</FKTable>
+            <PKRole></PKRole>
+            <FKRole></FKRole>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c69</PKColumn>
+                    <FKColumn>c90</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>1..1</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>Cascade</OnUpdateAction>
+            <OnDeleteAction>Restrict</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r25">
+            <Name>Versus_Jugador</Name>
+            <Description></Description>
+            <PKTable>t21</PKTable>
+            <FKTable>t32</FKTable>
+            <PKRole></PKRole>
+            <FKRole></FKRole>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c69</PKColumn>
+                    <FKColumn>c104</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>1..1</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>Cascade</OnUpdateAction>
+            <OnDeleteAction>Restrict</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r37">
+            <Name>Clasico_Habilidad</Name>
+            <Description></Description>
+            <PKTable>t26</PKTable>
+            <FKTable>t29</FKTable>
+            <PKRole></PKRole>
+            <FKRole></FKRole>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c84</PKColumn>
+                    <FKColumn>c119</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..1</Cardinality>
+            <Mandatory>false</Mandatory>
+            <OnUpdateAction>Cascade</OnUpdateAction>
+            <OnDeleteAction>SetDefault</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r38">
+            <Name>Enemigo_Habilidad</Name>
+            <Description></Description>
+            <PKTable>t26</PKTable>
+            <FKTable>t23</FKTable>
+            <PKRole></PKRole>
+            <FKRole></FKRole>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c84</PKColumn>
+                    <FKColumn>c83</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>false</Mandatory>
+            <OnUpdateAction>Cascade</OnUpdateAction>
+            <OnDeleteAction>SetDefault</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r48">
+            <Name>Enemy_Level_Niveles</Name>
+            <Description></Description>
+            <PKTable>t28</PKTable>
+            <FKTable>t35</FKTable>
+            <PKRole></PKRole>
+            <FKRole></FKRole>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c153</PKColumn>
+                    <FKColumn>c166</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r49">
+            <Name>Enemy_Level_Enemigo</Name>
+            <Description></Description>
+            <PKTable>t23</PKTable>
+            <FKTable>t35</FKTable>
+            <PKRole></PKRole>
+            <FKRole></FKRole>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c81</PKColumn>
+                    <FKColumn>c167</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>false</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r50">
+            <Name>Blocks_Level_Niveles</Name>
+            <Description></Description>
+            <PKTable>t28</PKTable>
+            <FKTable>t36</FKTable>
+            <PKRole></PKRole>
+            <FKRole></FKRole>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c153</PKColumn>
+                    <FKColumn>c168</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r51">
+            <Name>Blocks_Level_Bloque</Name>
+            <Description></Description>
+            <PKTable>t33</PKTable>
+            <FKTable>t36</FKTable>
+            <PKRole></PKRole>
+            <FKRole></FKRole>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c117</PKColumn>
+                    <FKColumn>c169</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r64">
+            <Name>Versus_Niveles</Name>
+            <Description>Referencia del nivel de modo versus</Description>
+            <PKTable>t28</PKTable>
+            <FKTable>t32</FKTable>
+            <PKRole></PKRole>
+            <FKRole></FKRole>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c153</PKColumn>
+                    <FKColumn>c195</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>1..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>Cascade</OnUpdateAction>
+            <OnDeleteAction>Restrict</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r65">
+            <Name>Clasico_Niveles</Name>
+            <Description>Referencia del nivel de modo clasico</Description>
+            <PKTable>t28</PKTable>
+            <FKTable>t29</FKTable>
+            <PKRole></PKRole>
+            <FKRole></FKRole>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c153</PKColumn>
+                    <FKColumn>c194</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>Cascade</OnUpdateAction>
+            <OnDeleteAction>SetDefault</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r66">
+            <Name>Challenge_Niveles</Name>
+            <Description>Referencia del nivel de modo challenge</Description>
+            <PKTable>t28</PKTable>
+            <FKTable>t31</FKTable>
+            <PKRole></PKRole>
+            <FKRole></FKRole>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c153</PKColumn>
+                    <FKColumn>c196</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>1..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>Cascade</OnUpdateAction>
+            <OnDeleteAction>Restrict</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r68">
+            <Name>Bloque_Elemento</Name>
+            <Description>Relacion entre elementos que contiene un bloque y el bloque</Description>
+            <PKTable>t38</PKTable>
+            <FKTable>t33</FKTable>
+            <PKRole></PKRole>
+            <FKRole></FKRole>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c202</PKColumn>
+                    <FKColumn>c118</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>false</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r69">
+            <Name>Elemento_Habilidad</Name>
+            <Description>Relacion de habilidad con el elemento del bloque si es un power up</Description>
+            <PKTable>t26</PKTable>
+            <FKTable>t38</FKTable>
+            <PKRole></PKRole>
+            <FKRole></FKRole>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c84</PKColumn>
+                    <FKColumn>c205</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>false</Mandatory>
+            <OnUpdateAction>Cascade</OnUpdateAction>
+            <OnDeleteAction>SetDefault</OnDeleteAction>
+            <Properties/>
+        </Reference>
+    </References>
+    <Sequences/>
+    <Notes/>
+    <Areas>
+        <Area Id="ar7">
+            <Name>Modo versus</Name>
+            <DisplayInfo>
+                <X>6122.5</X>
+                <Y>4669.5</Y>
+                <Width>264.0</Width>
+                <Height>169.0</Height>
+                <LineColor>#000000</LineColor>
+                <FillColor>#FFFFFF</FillColor>
+                <DashArray>[5,5]</DashArray>
+                <NameX>155.8060458115708</NameX>
+                <NameY>138.3255770615707</NameY>
+                <NameColor>#000000</NameColor>
+                <ZIndex>1</ZIndex>
+            </DisplayInfo>
+        </Area>
+        <Area Id="ar8">
+            <Name>Modo challenge</Name>
+            <DisplayInfo>
+                <X>6502.5</X>
+                <Y>4762.5</Y>
+                <Width>292.0</Width>
+                <Height>199.0</Height>
+                <LineColor>#000000</LineColor>
+                <FillColor>#FFFFFF</FillColor>
+                <DashArray>[5,5]</DashArray>
+                <NameX>167.725228924259</NameX>
+                <NameY>173.47091250436597</NameY>
+                <NameColor>#000000</NameColor>
+                <ZIndex>2</ZIndex>
+            </DisplayInfo>
+        </Area>
+        <Area Id="ar9">
+            <Name>Modo fortuna</Name>
+            <DisplayInfo>
+                <X>6691.5</X>
+                <Y>4486.5</Y>
+                <Width>256.0</Width>
+                <Height>166.0</Height>
+                <LineColor>#000000</LineColor>
+                <FillColor>#FFFFFF</FillColor>
+                <DashArray>[5,5]</DashArray>
+                <NameX>140.19189453125</NameX>
+                <NameY>131.0</NameY>
+                <NameColor>#000000</NameColor>
+                <ZIndex>3</ZIndex>
+            </DisplayInfo>
+        </Area>
+        <Area Id="ar10">
+            <Name>Modo clasico</Name>
+            <DisplayInfo>
+                <X>5809.5</X>
+                <Y>4333.5</Y>
+                <Width>345.0</Width>
+                <Height>229.0</Height>
+                <LineColor>#000000</LineColor>
+                <FillColor>#FFFFFF</FillColor>
+                <DashArray>[5,5]</DashArray>
+                <NameX>239.45382266061574</NameX>
+                <NameY>204.65477656741157</NameY>
+                <NameColor>#000000</NameColor>
+                <ZIndex>4</ZIndex>
+            </DisplayInfo>
+        </Area>
+        <Area Id="ar11">
+            <Name>Niveles</Name>
+            <DisplayInfo>
+                <X>5382.5</X>
+                <Y>4617.5</Y>
+                <Width>606.0</Width>
+                <Height>643.0</Height>
+                <LineColor>#000000</LineColor>
+                <FillColor>#FFFFFF</FillColor>
+                <DashArray>[5,5]</DashArray>
+                <NameX>540.5149725344556</NameX>
+                <NameY>615.0515936282054</NameY>
+                <NameColor>#000000</NameColor>
+                <ZIndex>5</ZIndex>
+            </DisplayInfo>
+        </Area>
+        <Area Id="ar12">
+            <Name>Jugador</Name>
+            <DisplayInfo>
+                <X>6366.5</X>
+                <Y>4479.5</Y>
+                <Width>238.0</Width>
+                <Height>160.0</Height>
+                <LineColor>#000000</LineColor>
+                <FillColor>#FFFFFF</FillColor>
+                <DashArray>[5,5]</DashArray>
+                <NameX>169.48241328616155</NameX>
+                <NameY>135.6547765674116</NameY>
+                <NameColor>#000000</NameColor>
+                <ZIndex>6</ZIndex>
+            </DisplayInfo>
+        </Area>
+    </Areas>
+    <Texts/>
+    <TableDisplays>
+        <TableDisplay Id="td22">
+            <X>6402.5</X>
+            <Y>4519.5</Y>
+            <Width>165.0</Width>
+            <Height>87.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t21</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td24">
+            <X>5425.5</X>
+            <Y>4924.5</Y>
+            <Width>227.0</Width>
+            <Height>102.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t23</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td26">
+            <X>6715.5</X>
+            <Y>4521.5</Y>
+            <Width>205.0</Width>
+            <Height>87.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t25</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td27">
+            <X>5427.5</X>
+            <Y>4782.5</Y>
+            <Width>215.0</Width>
+            <Height>64.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t26</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td29">
+            <X>5711.5</X>
+            <Y>5102.5</Y>
+            <Width>202.0</Width>
+            <Height>90.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t28</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td30">
+            <X>5847.5</X>
+            <Y>4369.5</Y>
+            <Width>246.0</Width>
+            <Height>145.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t29</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td32">
+            <X>6550.5</X>
+            <Y>4784.5</Y>
+            <Width>192.0</Width>
+            <Height>145.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t31</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td33">
+            <X>6156.5</X>
+            <Y>4710.5</Y>
+            <Width>188.0</Width>
+            <Height>87.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t32</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td34">
+            <X>5704.5</X>
+            <Y>4790.5</Y>
+            <Width>222.0</Width>
+            <Height>102.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t33</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td36">
+            <X>5410.5</X>
+            <Y>5111.5</Y>
+            <Width>236.0</Width>
+            <Height>74.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t35</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td37">
+            <X>5725.5</X>
+            <Y>4937.5</Y>
+            <Width>212.0</Width>
+            <Height>87.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t36</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td39">
+            <X>5689.5</X>
+            <Y>4655.5</Y>
+            <Width>227.0</Width>
+            <Height>87.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t38</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+    </TableDisplays>
+    <ViewDisplays/>
+    <ReferenceDisplays>
+        <ReferenceDisplay Id="rd22">
+            <Color>#000000</Color>
+            <Type>Cross_3CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6412.5</X>
+                    <Y>4529.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6412.5</X>
+                    <Y>4411.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6083.5</X>
+                    <Y>4411.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td22</PkTableDisplay>
+            <FkTableDisplay>td30</FkTableDisplay>
+            <Reference>r22</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd23">
+            <Color>#000000</Color>
+            <Type>Vertical_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6557.5</X>
+                    <Y>4529.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6557.5</X>
+                    <Y>4558.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6719.5</X>
+                    <Y>4558.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6719.5</X>
+                    <Y>4531.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td22</PkTableDisplay>
+            <FkTableDisplay>td26</FkTableDisplay>
+            <Reference>r23</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd24">
+            <Color>#000000</Color>
+            <Type>Cross_3CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6526.5</X>
+                    <Y>4530.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6526.5</X>
+                    <Y>4796.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6627.5</X>
+                    <Y>4796.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td22</PkTableDisplay>
+            <FkTableDisplay>td32</FkTableDisplay>
+            <Reference>r24</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd25">
+            <Color>#000000</Color>
+            <Type>Cross_3CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6470.5</X>
+                    <Y>4596.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6470.5</X>
+                    <Y>4723.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6239.5</X>
+                    <Y>4723.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td22</PkTableDisplay>
+            <FkTableDisplay>td33</FkTableDisplay>
+            <Reference>r25</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd37">
+            <Color>#000000</Color>
+            <Type>Cross_3CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>5524.5</X>
+                    <Y>4792.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5524.5</X>
+                    <Y>4401.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5857.5</X>
+                    <Y>4401.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td27</PkTableDisplay>
+            <FkTableDisplay>td30</FkTableDisplay>
+            <Reference>r37</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd38">
+            <Color>#000000</Color>
+            <Type>Cross_3CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>5526.5</X>
+                    <Y>4836.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5499.5</X>
+                    <Y>4836.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5499.5</X>
+                    <Y>4991.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td27</PkTableDisplay>
+            <FkTableDisplay>td24</FkTableDisplay>
+            <Reference>r38</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd48">
+            <Color>#000000</Color>
+            <Type>Cross_3CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>5754.5</X>
+                    <Y>5154.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5462.5</X>
+                    <Y>5154.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5462.5</X>
+                    <Y>5121.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td29</PkTableDisplay>
+            <FkTableDisplay>td36</FkTableDisplay>
+            <Reference>r48</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd49">
+            <Color>#000000</Color>
+            <Type>Vertical_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>5585.5</X>
+                    <Y>4956.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5585.5</X>
+                    <Y>5066.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5488.5</X>
+                    <Y>5066.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5488.5</X>
+                    <Y>5121.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td24</PkTableDisplay>
+            <FkTableDisplay>td36</FkTableDisplay>
+            <Reference>r49</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd50">
+            <Color>#000000</Color>
+            <Type>Vertical_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>5810.5</X>
+                    <Y>5173.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5810.5</X>
+                    <Y>5050.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5800.5</X>
+                    <Y>5050.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5800.5</X>
+                    <Y>4962.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td29</PkTableDisplay>
+            <FkTableDisplay>td37</FkTableDisplay>
+            <Reference>r50</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd51">
+            <Color>#000000</Color>
+            <Type>Vertical_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>5777.5</X>
+                    <Y>4845.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5777.5</X>
+                    <Y>4956.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5747.5</X>
+                    <Y>4956.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5747.5</X>
+                    <Y>4980.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td34</PkTableDisplay>
+            <FkTableDisplay>td37</FkTableDisplay>
+            <Reference>r51</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd64">
+            <Color>#000000</Color>
+            <Type>Cross_3CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>5903.5</X>
+                    <Y>5154.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6178.5</X>
+                    <Y>5154.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6178.5</X>
+                    <Y>4787.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td29</PkTableDisplay>
+            <FkTableDisplay>td33</FkTableDisplay>
+            <Reference>r64</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd65">
+            <Color>#000000</Color>
+            <Type>Vertical_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>5903.5</X>
+                    <Y>5112.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5903.5</X>
+                    <Y>5132.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6033.5</X>
+                    <Y>5132.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6033.5</X>
+                    <Y>4495.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td29</PkTableDisplay>
+            <FkTableDisplay>td30</FkTableDisplay>
+            <Reference>r65</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd66">
+            <Color>#000000</Color>
+            <Type>Horizontal_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>5892.5</X>
+                    <Y>5180.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6269.5</X>
+                    <Y>5180.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6269.5</X>
+                    <Y>4865.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6620.5</X>
+                    <Y>4865.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td29</PkTableDisplay>
+            <FkTableDisplay>td32</FkTableDisplay>
+            <Reference>r66</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd68">
+            <Color>#000000</Color>
+            <Type>Cross_3CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>5800.5</X>
+                    <Y>4705.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5767.5</X>
+                    <Y>4705.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5767.5</X>
+                    <Y>4818.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td39</PkTableDisplay>
+            <FkTableDisplay>td34</FkTableDisplay>
+            <Reference>r68</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd69">
+            <Color>#000000</Color>
+            <Type>Cross_3CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>5613.5</X>
+                    <Y>4792.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5613.5</X>
+                    <Y>4719.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5699.5</X>
+                    <Y>4719.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td27</PkTableDisplay>
+            <FkTableDisplay>td39</FkTableDisplay>
+            <Reference>r69</Reference>
+        </ReferenceDisplay>
+    </ReferenceDisplays>
+    <Properties>
+        <Property>
+            <Name>pdf-printer-paper-size</Name>
+            <Value>A4</Value>
+        </Property>
+        <Property>
+            <Name>pdf-printer-margin-top</Name>
+            <Value>10</Value>
+        </Property>
+        <Property>
+            <Name>pdf-printer-margin-bottom</Name>
+            <Value>10</Value>
+        </Property>
+        <Property>
+            <Name>pdf-printer-margin-left</Name>
+            <Value>10</Value>
+        </Property>
+        <Property>
+            <Name>pdf-printer-margin-right</Name>
+            <Value>10</Value>
+        </Property>
+        <Property>
+            <Name>pdf-printer-page-orientation</Name>
+            <Value>landscape</Value>
+        </Property>
+        <Property>
+            <Name>pdf-printer-show-pages</Name>
+            <Value>false</Value>
+        </Property>
+        <Property>
+            <Name>pdf-printer-include-footer</Name>
+            <Value>true</Value>
+        </Property>
+        <Property>
+            <Name>reference-notation</Name>
+            <Value>crows-foot</Value>
+        </Property>
+        <Property>
+            <Name>pages-line-color</Name>
+            <Value>#CC0000</Value>
+        </Property>
+        <Property>
+            <Name>show-grid</Name>
+            <Value>false</Value>
+        </Property>
+        <Property>
+            <Name>grid-color</Name>
+            <Value>#D9D9D9</Value>
+        </Property>
+        <Property>
+            <Name>grid-style</Name>
+            <Value>solid</Value>
+        </Property>
+        <Property>
+            <Name>grid-spacing</Name>
+            <Value>2</Value>
+        </Property>
+        <Property>
+            <Name>grid-spacing-units</Name>
+            <Value>cm</Value>
+        </Property>
+        <Property>
+            <Name>grid-subdivisions</Name>
+            <Value>1</Value>
+        </Property>
+    </Properties>
+    <DefaultAdditionalProperties>
+        <Types>
+            <Name>table</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>column</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>alternate_key</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>index</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>table_check</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>trigger</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>reference</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>view</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>sequence</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>procedure</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>all</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>view_column</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>primary_key</Name>
+            <Properties/>
+        </Types>
+    </DefaultAdditionalProperties>
+</DatabaseModel>
